@@ -46,7 +46,7 @@ def change_password(ip, port, username, old_password, new_password):
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print('Usage: python batchRunCommand.py {USERNAME} {OLD_PASSWORD} {NEW_PASSWORD}')
+        print('Usage: python batchChangePassword.py {USERNAME} {OLD_PASSWORD} {NEW_PASSWORD}')
         exit(0)
 
     username = sys.argv[1]
