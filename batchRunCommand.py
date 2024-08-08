@@ -30,11 +30,15 @@ def run_commmand(ip, port, username, PASSWORD, command):
 
         # 执行命令
         stdin, stdout, stderr = client.exec_command(command)
+        time.sleep(1)  # 等待命令完成
 
         # 输出结果
-        time.sleep(1)  # 等待命令完成
-        print(f"[+] Stdout:\n{stdout.read().decode()}")
-        print(f"[+] Stderr:\n{stderr.read().decode()}")
+        stdout = stdout.read().decode()
+        stderr = stderr.read().decode()
+        if stdout.strip():
+            print(f"[+] stdout:\n{stdout}")
+        if stderr.strip():
+            print(f"[+] stderr:\n{stderr}")
 
         client.close()
     except Exception as e:
@@ -52,6 +56,7 @@ if __name__ == '__main__':
     while True:
         print('=' * 80)
         print('[+] input command that you want to run on all servers')
+        print('    (type `exit` to quit program)')
         cmd = input('[>] ')
         for hostname, ip, port in servers:
             print(f"[.] Running command on {hostname} ({username}@{ip}:{port})...")
