@@ -5,7 +5,7 @@ from server_list import servers_global
 
 def check_sudoer():
     id_list = os.popen('id').read()
-    return 'sudo' in id_list
+    return 'sudo' in id_list or 'wheel' in id_list
 
 def change_password(ip, port, self_username, self_password, target_username, target_password):
     try:
