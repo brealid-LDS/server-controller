@@ -40,6 +40,7 @@ if __name__ == '__main__':
         help()
         exit(0)
 
+    print('=' * 80)
     username = os.popen('whoami').read().strip()
     print(f'[+] Hello, {username}!')
 
