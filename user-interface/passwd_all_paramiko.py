@@ -41,6 +41,14 @@ if __name__ == '__main__':
         exit(0)
 
     print('=' * 80)
+    print(r"                                 _         _ _" "\n"
+          r"                                | |       | | |" "\n"
+          r" _ __   __ _ ___ _____      ____| |   __ _| | |" "\n"
+          r"| '_ \ / _` / __/ __\ \ /\ / / _` |  / _` | | |" "\n"
+          r"| |_) | (_| \__ \__ \\ V  V / (_| | | (_| | | |" "\n"
+          r"| .__/ \__,_|___/___/ \_/\_/ \__,_|  \__,_|_|_|" "\n"
+          r"| |" "\n"
+          r"|_|         -- controls password on LDS's servers" "\n")
     username = os.popen('whoami').read().strip()
     print(f'[+] Hello, {username}!')
 

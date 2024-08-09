@@ -16,5 +16,5 @@ echo -e "export http_proxy=\"__proxy__\"\nexport https_proxy=\"__proxy__\"" > ~/
 To batchly install torch
 
 ```
- cd /data/zhaoyi && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && chmod +x Miniconda3-latest-Linux-x86_64.sh && ./Miniconda3-latest-Linux-x86_64.sh && source ~/.bashrc && conda create --name tool python==3.10 && conda activate tool && pip install paramiko && unset http_proxy && unset https_proxy && git clone https://github.com/brealid-LDS/server-controller && chmod +x /data/zhaoyi/server-controller/user-interface/passwd_all_paramiko.py && cp /data/zhaoyi/server-controller/user-interface/passwd_all /usr/local/bin/passwd_all && chmod +x /usr/local/bin/passwd_all
+ cd /data/zhaoyi && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && chmod +x Miniconda3-latest-Linux-x86_64.sh && ./Miniconda3-latest-Linux-x86_64.sh -p /data/zhaoyi/miniconda3 && source ~/.bashrc && conda create --name tool python==3.10 && conda activate tool && pip install paramiko && unset http_proxy && unset https_proxy && git clone https://github.com/brealid-LDS/server-controller && chmod +x /data/zhaoyi/server-controller/user-interface/passwd_all_paramiko.py && sudo cp /data/zhaoyi/server-controller/user-interface/passwd_all /usr/local/bin/passwd_all
 ```
