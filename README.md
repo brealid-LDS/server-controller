@@ -12,3 +12,9 @@ To set proxy, run
 ```
 echo -e "export http_proxy=\"__proxy__\"\nexport https_proxy=\"__proxy__\"" > ~/.proxy && chmod 600 ~/.proxy && echo -e '\nsource ~/.proxy' >> .bashrc && tail -n 2 .bashrc
 ```
+
+To batchly install torch
+
+```
+ cd /data/zhaoyi && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && chmod +x Miniconda3-latest-Linux-x86_64.sh && ./Miniconda3-latest-Linux-x86_64.sh && source ~/.bashrc && conda create --name tool python==3.10 && conda activate tool && pip install paramiko && unset http_proxy && unset https_proxy && git clone https://github.com/brealid-LDS/server-controller && chmod +x /data/zhaoyi/server-controller/user-interface/passwd_all_paramiko.py && cp /data/zhaoyi/server-controller/user-interface/passwd_all /usr/local/bin/passwd_all && chmod +x /usr/local/bin/passwd_all
+```
