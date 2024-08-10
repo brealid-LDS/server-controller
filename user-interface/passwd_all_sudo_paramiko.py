@@ -1,7 +1,12 @@
 #!/data/zhaoyi/miniconda3/envs/tool/bin/python
+import warnings
+from cryptography.utils import CryptographyDeprecationWarning
+warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
+
 import paramiko
 import os, sys, time
 from server_list import servers_global
+
 
 def check_sudoer():
     id_list = os.popen('id').read()
@@ -74,7 +79,7 @@ if __name__ == '__main__':
     mask = '*' * 8 + ' ' * (len(target_password) - 8)
     print(f'\x1b[1A[>] {target_username}\'s new password: {mask}')
     
-    print(f'[+] Please Check:\n'
+    print(f'[+] Please check the information below:\n'
           f'    Username: {target_username}\n'
           f'    His/Her new password: {target_password}')
     if input('[>] input `yes` to continue: ').lower() != 'yes':

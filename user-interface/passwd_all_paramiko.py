@@ -1,7 +1,12 @@
 #!/data/zhaoyi/miniconda3/envs/tool/bin/python
+import warnings
+from cryptography.utils import CryptographyDeprecationWarning
+warnings.filterwarnings("ignore", category=CryptographyDeprecationWarning)
+
 import paramiko
 import os, sys, time
 from server_list import servers_global
+
 
 def change_password(ip, port, username, old_password, new_password):
     try:
