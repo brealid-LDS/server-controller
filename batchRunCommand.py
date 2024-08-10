@@ -58,6 +58,9 @@ if __name__ == '__main__':
         print('[+] input command that you want to run on all servers')
         print('    (type `exit` to quit program)')
         cmd = input('[>] ')
+        if cmd == 'exit':
+            print('Bye.')
+            break
         for hostname, ip, port in servers:
             print(f"[.] Running command on {hostname} ({username}@{ip}:{port})...")
             run_commmand(ip, port, username, password, cmd)
