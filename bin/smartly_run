@@ -1,0 +1,2 @@
+#!/bin/bash
+/data/zhaoyi/server-controller/smartly_run.py "$@"
