@@ -37,10 +37,11 @@ def cuda_ver():
 
 def try_install_module(module):
     if module == 'torch':
+        _cuda_ver = cuda_ver()
         print('====> [WARN] torch 包不会自动安装! 存在依赖风险! 建议手动复制命令安装')
         print(f'====> 建议的安装命令 (二选一): ')
-        print(f'====>     conda install pytorch torchvision torchaudio pytorch-cuda={cuda_ver()} -c pytorch -c nvidia')
-        print(f'====>     pip install -U torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu{cuda_ver().replace(".", "")}')
+        print(f'====>     conda install pytorch torchvision torchaudio pytorch-cuda={_cuda_ver} -c pytorch -c nvidia')
+        print(f'====>     pip install -U torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu{_cuda_ver.replace(".", "")}')
         return -1
 
     conda_required = ['torch_scatter']
